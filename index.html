@@ -1,0 +1,3116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baljyot Singh Khokher | Data Scientist & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0f1a;
+            --bg-darker: #050a13;
+            --bg-light: #1a2130;
+            --accent-primary: #00d4ff;
+            --accent-secondary: #4e54c8;
+            --accent-tertiary: #8f94fb;
+            --text-primary: #e6f1ff;
+            --text-secondary: #ccd6f6;
+            --text-accent: #ffffff;
+            --card-bg: rgba(26, 33, 48, 0.9);
+            --glass-bg: rgba(26, 33, 48, 0.7);
+            --glass-border: rgba(0, 212, 255, 0.2);
+            --shadow: 0 10px 30px -15px rgba(5, 10, 19, 0.7);
+            --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --section-spacing: 8rem;
+            --section-spacing-mobile: 5rem;
+            --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #4e54c8 100%);
+            --gradient-secondary: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+            --gradient-dark: linear-gradient(to right, #0a0f1a, #1a2130);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-image: var(--gradient-dark);
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,212,255,0.2) 0%, rgba(78,84,200,0) 70%);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 800px;
+            height: 800px;
+            top: -300px;
+            left: -300px;
+            animation-delay: 0s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 600px;
+            height: 600px;
+            bottom: -200px;
+            right: -200px;
+            animation-delay: 3s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 30%;
+            animation-delay: 6s;
+        }
+
+        .bg-circle:nth-child(4) {
+            width: 500px;
+            height: 500px;
+            bottom: 20%;
+            right: 30%;
+            animation-delay: 9s;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: transparent;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 4px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-accent);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--accent-primary);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-tertiary);
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background-color: rgba(5, 10, 19, 0.5);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 6rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        .hero-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-primary), transparent);
+        }
+
+        .typewriter {
+            position: relative;
+        }
+
+        .typewriter::after {
+            content: '|';
+            position: absolute;
+            right: -10px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.05rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(78, 84, 200, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: var(--shadow);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            border: 4px solid var(--accent-primary);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            transform: translateZ(20px);
+        }
+
+      
+
+        .about-image:hover::after {
+            top: 15px;
+            left: 15px;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: var(--bg-darker);
+        }
+
+        .education-timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 7px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            transform: translateX(-6px);
+            border: 3px solid var(--bg-darker);
+            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+        }
+
+        .timeline-item h4 {
+            margin-bottom: 0.7rem;
+            color: var(--text-accent);
+        }
+
+        .timeline-item p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .timeline-item .date {
+            color: var(--accent-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), transparent);
+            z-index: -1;
+        }
+
+        .skill-category.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-primary);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Why Hire Me Section */
+        #why-hire {
+            background-color: var(--bg-darker);
+        }
+
+        .hire-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hire-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hire-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hire-point {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .hire-point-icon {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-top: 0.3rem;
+        }
+
+        .hire-point-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-accent);
+        }
+
+        .hire-point-content p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .testimonial-card.animate {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 3rem;
+            font-size: 8rem;
+            color: rgba(0, 212, 255, 0.1);
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card::after {
+            content: '"';
+            position: absolute;
+            bottom: -3rem;
+            right: 3rem;
+            font-size: 8rem;
+            color: rgba(0, 212, 255, 0.1);
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            color: var(--text-primary);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-primary);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2);
+            color: var(--accent-secondary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            font-size: 1.05rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--bg-darker);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(20px);
+            opacity: 0;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(5, 10, 19, 0.1), rgba(5, 10, 19, 0.8));
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-primary);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin: 1rem 0;
+        }
+
+        .project-tech span {
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--accent-secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(78, 84, 200, 0.2);
+        }
+
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        /* Research Section */
+        .research-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 60px;
+        }
+
+        .research-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .research-item {
+            position: relative;
+            padding: 3rem 0;
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .research-item.animate {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .research-item:first-child {
+            padding-top: 0;
+        }
+
+        .research-item::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 1.5rem;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: 5px solid var(--bg-darker);
+            box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.2);
+        }
+
+        .research-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .research-item:hover .research-content {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+
+        .research-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .research-item p {
+            margin-bottom: 1.5rem;
+        }
+
+        .research-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Games Section */
+        .games-section {
+            padding: var(--section-spacing) 0;
+            background-color: var(--bg-darker);
+        }
+
+        .game-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .game-btn:hover, .game-btn.active {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .game-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            max-width: 800px;
+            margin: 0 auto;
+            transform: scale(0.98);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .game-container.animate {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .game-content {
+            display: none;
+        }
+
+        .game-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .game-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--accent-primary);
+        }
+
+        .game-mode {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-action-btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .game-action-btn:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+        }
+
+        /* Tic Tac Toe */
+        .tic-tac-toe {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto 2rem;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--accent-primary);
+        }
+
+        .cell:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .cell.x {
+            color: var(--accent-primary);
+        }
+
+        .cell.o {
+            color: var(--accent-secondary);
+        }
+
+        .game-score {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--text-accent);
+        }
+
+        /* Memory Game */
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+
+        .memory-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 2rem;
+        }
+
+        .front {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+        }
+
+        .back {
+            background: var(--bg-dark);
+            color: var(--accent-secondary);
+            transform: rotateY(180deg);
+            border: 2px solid var(--accent-primary);
+        }
+
+        /* Snake Game */
+        #snake-canvas {
+            display: block;
+            margin: 0 auto 2rem;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent-primary);
+            border-radius: 8px;
+        }
+
+        .snake-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Flappy Bird */
+        #flappy-canvas {
+            display: block;
+            margin: 0 auto 2rem;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent-primary);
+            border-radius: 8px;
+        }
+
+        .back-to-portfolio {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 0.9rem 2rem;
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .back-to-portfolio:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(78, 84, 200, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .contact-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            transform: rotate(15deg);
+        }
+
+        .contact-item p {
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid var(--glass-border);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .contact-form:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 2rem;
+            color: var(--accent-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--bg-light);
+            color: var(--text-primary);
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-darker);
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-accent);
+        }
+
+        .footer-logo span {
+            color: var(--accent-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+
+        .social-link:hover {
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            color: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--accent-secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .fade-in-scale {
+            animation: fadeInScale 0.8s ease forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 2s ease infinite;
+        }
+
+        .rotate {
+            animation: rotate 20s linear infinite;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            :root {
+                --section-spacing: 6rem;
+            }
+            
+            .about-content,
+            .contact-container,
+            .hire-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-spacing: var(--section-spacing-mobile);
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-darker);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                clip-path: circle(0px at 90% -10%);
+                transition: all 0.5s ease-out;
+                pointer-events: none;
+                border-bottom: 1px solid var(--glass-border);
+            }
+
+            .nav-links.active {
+                clip-path: circle(1500px at 90% -10%);
+                pointer-events: all;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-container {
+                padding: 2rem;
+            }
+            
+            .memory-game {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            .research-timeline {
+                padding-left: 30px;
+            }
+
+            .research-item::before {
+                left: -30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .testimonial-card {
+                padding: 3rem 1.5rem;
+            }
+
+            .testimonial-card::before,
+            .testimonial-card::after {
+                font-size: 5rem;
+            }
+            
+            .game-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .game-btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            .memory-game {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .contact-icon {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span>Baljyot Singh</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#why-hire">Why Hire Me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#research">Research</a>
+                    <a href="#games">Games</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content" style="align-items: flex-start; text-align: left;">
+                <h1 class="fade-in" style="text-align: left;">Baljyot Singh Khokher</h1>
+                <div class="hero-subtitle fade-in delay-1" style="text-align: left;">
+                    <span class="typewriter">Data Scientist & Developer</span>
+                </div>
+                <p class="fade-in delay-2" style="text-align: left; max-width: 600px;">
+                    I transform data into intelligent solutions. With expertise in Python, SQL, and machine learning, I build systems that extract insights and create real business impact.
+                </p>
+                <div class="hero-cta fade-in delay-3" style="justify-content: flex-start;">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Hi, I'm Baljyot Singh Khokher — a data scientist and developer passionate about building intelligent systems that solve real-world problems.</p>
+                    <p>With expertise in Python, SQL, machine learning, and full-stack development, I specialize in creating solutions that bridge the gap between data and action. My projects range from document interpretation tools using local LLMs to automated invoice processors and predictive analytics systems.</p>
+                    <p>What drives me is the challenge of taking complex data and turning it into something meaningful — whether that's a dashboard that reveals hidden trends, a model that forecasts future outcomes, or an application that makes data accessible to everyone.</p>
+                    <p>I believe in building solutions that are not just technically sound but also practical, scalable, and user-friendly. Clean code, thoughtful design, and measurable impact are at the heart of everything I create.</p>
+                </div>
+                <div class="about-image">
+                    <img src="image01.png" alt="Baljyot Singh Khokher">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="fade-in">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Data Handling</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">ETL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-line"></i> Visualization</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> ML & Analysis</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">Time-Series</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cogs"></i> More</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Local LLMs</span>
+                            <span class="skill-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="fade-in">Education</h2>
+            <div class="education-timeline">
+                <div class="timeline-item fade-in">
+                    <h4>B.Sc. in Data Science</h4>
+                    <p class="date">2022 - 2025 | Thakur College of Science and Commerce</p>
+                    <p>Specialized in Machine Learning and Big Data Analytics with a focus on practical applications in business intelligence.</p>
+                    <p><strong>CGPA:</strong> 7.83/10</p>
+                    <p><strong>Key Courses:</strong> Data Structures, Machine Learning, Statistical Modeling, Database Systems</p>
+                </div>
+                <div class="timeline-item fade-in delay-1">
+                    <h4>Higher Secondary Certificate (HSC)</h4>
+                    <p class="date">2022 | T.P. Bhatia Junior College</p>
+                    <p>Science Stream with focus on Mathematics and Computer Science.</p>
+                    <p><strong>Percentage:</strong> 61.17%</p>
+                </div>
+                <div class="timeline-item fade-in delay-2">
+                    <h4>Secondary School Certificate (SSC)</h4>
+                    <p class="date">2020 | Mount Mary High School</p>
+                    <p>Foundation in Science and Mathematics with excellent academic performance.</p>
+                    <p><strong>Percentage:</strong> 81.40%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hire Me Section -->
+    <section id="why-hire">
+        <div class="container">
+            <h2 class="fade-in">Why Hire Me?</h2>
+            <div class="hire-content">
+                <div class="hire-text fade-in">
+                    <p>I bring a rare combination of technical expertise, problem-solving mindset, and a strong sense of ownership. My background in data analysis, automation, and full-stack development allows me to not only extract meaningful insights from data but also build systems that make those insights actionable.</p>
+                    <p>I've successfully built and deployed real-world projects — from OCR-powered document interpreters using local LLMs, to automated invoice processors, to machine learning models that deliver actual business value. I don't just write code — I design solutions, and I think through the user, the system, and the long-term impact.</p>
+                    <p>I'm someone who learns fast, adapts quickly, and commits deeply. You won't just get a skilled developer — you'll get a creative thinker, a data storyteller, and a teammate who genuinely cares about making things better, smarter, and more efficient.</p>
+                </div>
+                <div class="hire-points fade-in delay-1">
+                    <div class="hire-point">
+                        <div class="hire-point-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="hire-point-content">
+                            <h4>Real-World Experience</h4>
+                            <p>Built systems like automated invoice processing, document interpretation using local LLMs, recommendation engines, and dashboards from scratch.</p>
+                        </div>
+                    </div>
+                    <div class="hire-point">
+                        <div class="hire-point-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="hire-point-content">
+                            <h4>Full Perspective</h4>
+                            <p>Understand both data logic and user experience, ensuring solutions are accurate, efficient, and practical.</p>
+                        </div>
+                    </div>
+                    <div class="hire-point">
+                        <div class="hire-point-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="hire-point-content">
+                            <h4>Fast Learner</h4>
+                            <p>Self-motivated with a focus on impact, performance, and long-term scalability.</p>
+                        </div>
+                    </div>
+                    <div class="hire-point">
+                        <div class="hire-point-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="hire-point-content">
+                            <h4>Problem-Solver</h4>
+                            <p>Value clean, maintainable, and meaningful development — not just coding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Document Interpreter">
+                    </div>
+                    <div class="project-content">
+                        <h3>Document Interpreter with LLM</h3>
+                        <p>Large Language Model integration using Ollama to interpret, summarize, and answer questions about complex documents with natural language processing.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LLM</span>
+                            <span>NLP</span>
+                            <span>Ollama</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/document_interpreter" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Movie Recommendation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Content-Based Movie Recommendation</h3>
+                        <p>Recommendation system using cosine similarity and NLP techniques to suggest movies based on user preferences and viewing history.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>NLP</span>
+                            <span>Recommendation Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/movie_recommendation_L" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Power BI Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3>Pneumonia Detection CNN</h3>
+                        <p>A deep learning-based Convolutional Neural Network (CNN) model designed to accurately detect pneumonia from chest X-ray images.</p>
+                        <div class="project-tech">
+                            <span>OpenCV </span>
+                            <span>Python</span>
+                            <span>keras</span>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/CNN" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Clothes Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Clothes Ordering Website</h3>
+                        <p>Full-stack e-commerce platform for clothing with user authentication, product catalog, cart functionality, and secure checkout.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/dresser" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Invoice Processing">
+                    </div>
+                    <div class="project-content">
+                        <h3>Automated Invoice Processing</h3>
+                        <p>System that reads and updates databases from scanned invoice images using OCR technology and automated workflows.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>OCR</span>
+                            <span>Automation</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/invoice_automated" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        
+                    </div>
+                    <div class="project-content">
+                        <h3>Gold price prediction</h3>
+                        <p>Time-series analysis and forecasting model to predict future price of gold using historical data.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Time Series</span>
+                            <span>Prophet</span>
+                            <span>ARIMA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/baljyot13/gold_price_prediction" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="fade-in">Research & Publications</h2>
+            <div class="research-timeline">
+                <div class="research-item">
+                    <div class="research-content">
+                        <h3>AI Integration with Patient Management Software and Development of Centralized Medical Data Management System</h3>
+                        <p class="date">2024 | Acedamia</p>
+                        <p>This research presents the integration of AI technologies into patient management software, focusing on the development of a centralized medical data management system. The study highlights how AI-driven automation, predictive analytics, and secure data centralization can enhance patient care, streamline administrative workflows, and improve clinical decision-making.</p>
+                        <p><strong>Key Findings:</strong> The proposed system reduced manual data entry by 70%, improved patient record accessibility, and enabled real-time insights for healthcare providers, resulting in more efficient and accurate patient management.</p>
+                        <div class="research-links">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-book-open"></i> Read Paper
+                            </a>
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-external-link-alt"></i> View on ResearchGate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <div class="research-content">
+                        <h3>Database to Store Genetic Information Writer</h3>
+                        <p class="date">2023 | Acedamia</p>
+                        <p>This paper discusses the need for a secure, scalable genetic information database to aid in disease prediction, personalized medicine, and genetic counseling. It highlights how genetic disorders can be prevented through pre-marital screening, especially in consanguineous relationships. The database would enable genetic risk assessment and partner compatibility analysis using AI-driven tools. Such systems can support healthcare initiatives by identifying carriers of hereditary diseases and promoting informed decision-making.</p>
+                        <p><strong>Key Contributions:</strong> .AI Integration for Risk Prediction: Suggests using AI models to assess genetic compatibility and predict inherited disease risks.
+
+Promotion of Genetic Counseling: Emphasizes combining database insights with counseling services for informed reproductive decisions.</p>
+                        <div class="research-links">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-book-open"></i> Read Paper
+                            </a>
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-external-link-alt"></i> View Proceedings
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section" id="games">
+        <div class="container">
+            <h2 class="fade-in">Interactive Games</h2>
+            <p class="fade-in delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Explore these mini-games I've built to showcase my JavaScript skills. Have fun while seeing my coding abilities in action!</p>
+            
+            <div class="game-selector">
+                <button class="game-btn active" data-game="tictactoe">Tic Tac Toe</button>
+                <button class="game-btn" data-game="memory">Memory Game</button>
+                <button class="game-btn" data-game="snake">Snake Game</button>
+                <button class="game-btn" data-game="flappy">Flappy Bird</button>
+            </div>
+
+            <div class="game-container">
+                <!-- Tic Tac Toe Game -->
+                <div id="tictactoe-game" class="game-content active">
+                    <h3 class="game-title">Tic Tac Toe</h3>
+                    <div class="game-mode">
+                        <button id="ttt-player-btn" class="game-action-btn">Play vs Human</button>
+                        <button id="ttt-computer-btn" class="game-action-btn">Play vs Computer</button>
+                    </div>
+                    <div class="tic-tac-toe">
+                        <div class="cell" data-index="0"></div>
+                        <div class="cell" data-index="1"></div>
+                        <div class="cell" data-index="2"></div>
+                        <div class="cell" data-index="3"></div>
+                        <div class="cell" data-index="4"></div>
+                        <div class="cell" data-index="5"></div>
+                        <div class="cell" data-index="6"></div>
+                        <div class="cell" data-index="7"></div>
+                        <div class="cell" data-index="8"></div>
+                    </div>
+                    <div class="game-score" id="ttt-status">Player X's turn</div>
+                    <button id="ttt-reset" class="game-action-btn">Reset Game</button>
+                </div>
+
+                <!-- Memory Game -->
+                <div id="memory-game" class="game-content">
+                    <h3 class="game-title">Memory Card Game</h3>
+                    <div class="memory-game" id="memory-board"></div>
+                    <div class="game-score">Moves: <span id="memory-moves">0</span></div>
+                    <div class="game-score">Pairs found: <span id="memory-pairs">0</span>/8</div>
+                    <button id="memory-reset" class="game-action-btn">Reset Game</button>
+                </div>
+
+                <!-- Snake Game -->
+                <div id="snake-game" class="game-content">
+                    <h3 class="game-title">Snake Game</h3>
+                    <canvas id="snake-canvas" width="400" height="400"></canvas>
+                    <div class="game-score">Score: <span id="snake-score">0</span></div>
+                    <div class="snake-controls">
+                        <button id="snake-start" class="game-action-btn">Start Game</button>
+                        <button id="snake-reset" class="game-action-btn">Reset</button>
+                    </div>
+                    <p style="text-align: center;">Use arrow keys to control the snake</p>
+                </div>
+
+                <!-- Flappy Bird -->
+                <div id="flappy-game" class="game-content">
+                    <h3 class="game-title">Flappy Bird</h3>
+                    <canvas id="flappy-canvas" width="400" height="600"></canvas>
+                    <div class="game-score">Score: <span id="flappy-score">0</span></div>
+                    <div class="snake-controls">
+                        <button id="flappy-start" class="game-action-btn">Start Game</button>
+                        <button id="flappy-reset" class="game-action-btn">Reset</button>
+                    </div>
+                    <p style="text-align: center;">Click or press space to flap</p>
+                </div>
+            </div>
+            <button class="back-to-portfolio">Back to Portfolio</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <p class="fade-in delay-1" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">Have a project in mind or want to discuss potential opportunities? Feel free to reach out - I'd love to hear from you!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Contact Details</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p>Email</p>
+                                    <a href="mailto:skbaljyot@gmail.com">skbaljyot@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p>Phone</p>
+                                    <a href="tel:+918419900259">+91 8419900259</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <p>GitHub</p>
+                                    <a href="https://github.com/baljyot13" target="_blank">github.com/baljyot13</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <p>LinkedIn</p>
+                                    <a href="https://linkedin.com/in/baljyot-singh-khokher-05a002250" target="_blank">Baljyot Singh Khokher</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p>Location</p>
+                                    <a href="#">Mumbai, India</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Download Resume</h3>
+                        <p>Get a comprehensive overview of my skills, experience, and education in PDF format.</p>
+                        <a href="skbaljyot@cv.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">Baljyot<span>.</span></a>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:skbaljyot@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/baljyot13" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/baljyot-singh-khokher-05a002250" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="copyright">© 2023 Baljyot Singh Khokher. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <button class="floating-btn pulse">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00d4ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#4e54c8",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Typewriter effect
+        const typewriterElement = document.querySelector('.typewriter');
+        const text = "Data Scientist & Developer";
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typewriterElement.innerHTML = text.substring(0, i+1);
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                typewriterElement.classList.remove('typewriter');
+            }
+        }
+        
+        // Start typewriter effect when hero section is in view
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                typeWriter();
+                observer.unobserve(entries[0].target);
+            }
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.querySelector('#hero'));
+
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            // Animate skill cards
+            document.querySelectorAll('.skill-category').forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+
+            // Animate testimonial card
+            const testimonialCard = document.querySelector('.testimonial-card');
+            if (testimonialCard) {
+                const testimonialPosition = testimonialCard.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (testimonialPosition < screenPosition) {
+                    testimonialCard.classList.add('animate');
+                }
+            }
+
+            // Animate service cards
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+
+            // Animate project cards
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+
+            // Animate research items
+            document.querySelectorAll('.research-item').forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (itemPosition < screenPosition) {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, index * 200);
+                }
+            });
+
+            // Animate game container
+            const gameContainer = document.querySelector('.game-container');
+            if (gameContainer) {
+                const containerPosition = gameContainer.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (containerPosition < screenPosition) {
+                    gameContainer.classList.add('animate');
+                }
+            }
+
+            // Animate contact cards
+            document.querySelectorAll('.contact-card').forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+
+            // Animate contact form
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                const formPosition = contactForm.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (formPosition < screenPosition) {
+                    contactForm.classList.add('animate');
+                }
+            }
+
+            // Animate hire points
+            document.querySelectorAll('.hire-point').forEach((point, index) => {
+                const pointPosition = point.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (pointPosition < screenPosition) {
+                    setTimeout(() => {
+                        point.style.opacity = '1';
+                        point.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Set initial state for hire points
+        document.querySelectorAll('.hire-point').forEach(point => {
+            point.style.opacity = '0';
+            point.style.transform = 'translateY(20px)';
+            point.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                animateOnScroll();
+            }, 300);
+        });
+
+        // Floating CTA click handler
+        document.querySelector('.floating-btn').addEventListener('click', () => {
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Games Section Logic
+        const gameBtns = document.querySelectorAll('.game-btn');
+        const gameContents = document.querySelectorAll('.game-content');
+        const backToPortfolio = document.querySelector('.back-to-portfolio');
+
+        // Show selected game
+        gameBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const game = btn.getAttribute('data-game');
+                
+                // Update active button
+                gameBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show selected game content
+                gameContents.forEach(content => content.classList.remove('active'));
+                document.getElementById(`${game}-game`).classList.add('active');
+                
+                // Initialize memory game if selected
+                if (game === 'memory') {
+                    initMemoryGame();
+                }
+            });
+        });
+
+        // Back to portfolio button
+        backToPortfolio.addEventListener('click', () => {
+            document.querySelector('#about').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Tic Tac Toe Game Logic
+        const tttCells = document.querySelectorAll('.cell');
+        const tttStatus = document.getElementById('ttt-status');
+        const tttResetBtn = document.getElementById('ttt-reset');
+        const tttPlayerBtn = document.getElementById('ttt-player-btn');
+        const tttComputerBtn = document.getElementById('ttt-computer-btn');
+
+        let currentPlayer = 'X';
+        let gameState = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+        let vsComputer = false;
+
+        const winningConditions = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+            [0, 4, 8], [2, 4, 6] // diagonals
+        ];
+
+        function handleCellClick(e) {
+            const clickedCell = e.target;
+            const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+
+            if (gameState[clickedCellIndex] !== '' || !gameActive) {
+                return;
+            }
+
+            handleCellPlayed(clickedCell, clickedCellIndex);
+            handleResultValidation();
+
+            if (vsComputer && gameActive && currentPlayer === 'O') {
+                setTimeout(computerMove, 300);
+            }
+        }
+
+        function handleCellPlayed(clickedCell, clickedCellIndex) {
+            gameState[clickedCellIndex] = currentPlayer;
+            clickedCell.textContent = currentPlayer;
+            clickedCell.classList.add(currentPlayer.toLowerCase());
+        }
+
+        function handleResultValidation() {
+            let roundWon = false;
+
+            for (let i = 0; i < winningConditions.length; i++) {
+                const [a, b, c] = winningConditions[i];
+
+                if (gameState[a] === '' || gameState[b] === '' || gameState[c] === '') {
+                    continue;
+                }
+
+                if (gameState[a] === gameState[b] && gameState[b] === gameState[c]) {
+                    roundWon = true;
+                    break;
+                }
+            }
+
+            if (roundWon) {
+                tttStatus.textContent = `Player ${currentPlayer} wins!`;
+                gameActive = false;
+                return;
+            }
+
+            const roundDraw = !gameState.includes('');
+            if (roundDraw) {
+                tttStatus.textContent = 'Game ended in a draw!';
+                gameActive = false;
+                return;
+            }
+
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            tttStatus.textContent = `Player ${currentPlayer}'s turn`;
+        }
+
+        // Minimax algorithm for unbeatable AI
+        function computerMove() {
+            if (!gameActive) return;
+
+            let bestScore = -Infinity;
+            let move = null;
+            for (let i = 0; i < 9; i++) {
+                if (gameState[i] === '') {
+                    gameState[i] = 'O';
+                    let score = minimax(gameState, 0, false);
+                    gameState[i] = '';
+                    if (score > bestScore) {
+                        bestScore = score;
+                        move = i;
+                    }
+                }
+            }
+            if (move !== null) {
+                const cell = document.querySelector(`.cell[data-index="${move}"]`);
+                cell.click();
+            }
+        }
+
+        function minimax(state, depth, isMaximizing) {
+            const winner = checkWinner(state);
+            if (winner !== null) {
+                if (winner === 'O') return 10 - depth;
+                if (winner === 'X') return depth - 10;
+                return 0;
+            }
+
+            if (isMaximizing) {
+                let bestScore = -Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (state[i] === '') {
+                        state[i] = 'O';
+                        let score = minimax(state, depth + 1, false);
+                        state[i] = '';
+                        bestScore = Math.max(score, bestScore);
+                    }
+                }
+                return bestScore;
+            } else {
+                let bestScore = Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (state[i] === '') {
+                        state[i] = 'X';
+                        let score = minimax(state, depth + 1, true);
+                        state[i] = '';
+                        bestScore = Math.min(score, bestScore);
+                    }
+                }
+                return bestScore;
+            }
+        }
+
+        function checkWinner(state) {
+            for (let i = 0; i < winningConditions.length; i++) {
+                const [a, b, c] = winningConditions[i];
+                if (state[a] && state[a] === state[b] && state[a] === state[c]) {
+                    return state[a];
+                }
+            }
+            if (!state.includes('')) return 'draw';
+            return null;
+        }
+
+        function resetGame() {
+            currentPlayer = 'X';
+            gameState = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+            tttStatus.textContent = `Player ${currentPlayer}'s turn`;
+
+            tttCells.forEach(cell => {
+                cell.textContent = '';
+                cell.classList.remove('x', 'o');
+            });
+        }
+
+        function setGameMode(computer) {
+            vsComputer = computer;
+            resetGame();
+            tttStatus.textContent = vsComputer ?
+                "Player X's turn (You vs Computer)" :
+                "Player X's turn (Player X vs Player O)";
+        }
+
+        tttCells.forEach(cell => cell.addEventListener('click', handleCellClick));
+        tttResetBtn.addEventListener('click', resetGame);
+        tttPlayerBtn.addEventListener('click', () => setGameMode(false));
+        tttComputerBtn.addEventListener('click', () => setGameMode(true));
+
+        // Memory Game Logic
+        const memoryBoard = document.getElementById('memory-board');
+        const memoryMovesEl = document.getElementById('memory-moves');
+        const memoryPairsEl = document.getElementById('memory-pairs');
+        const memoryResetBtn = document.getElementById('memory-reset');
+
+        let memoryCards = [];
+        let hasFlippedCard = false;
+        let lockBoard = false;
+        let firstCard, secondCard;
+        let moves = 0;
+        let pairsFound = 0;
+
+        const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
+
+        function initMemoryGame() {
+            memoryBoard.innerHTML = '';
+            memoryCards = [];
+            moves = 0;
+            pairsFound = 0;
+            memoryMovesEl.textContent = '0';
+            memoryPairsEl.textContent = '0/8';
+            
+            // Duplicate emojis to create pairs
+            const cards = [...emojis, ...emojis];
+            
+            // Shuffle cards
+            cards.sort(() => 0.5 - Math.random());
+            
+            // Create cards
+            cards.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.classList.add('memory-card');
+                card.dataset.emoji = emoji;
+                card.dataset.index = index;
+                
+                const front = document.createElement('div');
+                front.classList.add('front');
+                front.textContent = '?';
+                
+                const back = document.createElement('div');
+                back.classList.add('back');
+                back.textContent = emoji;
+                
+                card.appendChild(front);
+                card.appendChild(back);
+                
+                card.addEventListener('click', flipCard);
+                
+                memoryBoard.appendChild(card);
+                memoryCards.push(card);
+            });
+        }
+        
+        function flipCard() {
+            if (lockBoard || this === firstCard || this.classList.contains('flipped')) return;
+
+            this.classList.add('flipped');
+
+            if (!hasFlippedCard) {
+                hasFlippedCard = true;
+                firstCard = this;
+                return;
+            }
+
+            // Second click
+            secondCard = this;
+            moves++;
+            memoryMovesEl.textContent = moves;
+            lockBoard = true;
+            
+            checkForMatch();
+        }
+        
+        function checkForMatch() {
+            const isMatch = firstCard.dataset.emoji === secondCard.dataset.emoji;
+            
+            if (isMatch) {
+                disableCards();
+                pairsFound++;
+                memoryPairsEl.textContent = `${pairsFound}/8`;
+                
+                if (pairsFound === 8) {
+                    setTimeout(() => {
+                        alert(`Congratulations! You won in ${moves} moves!`);
+                    }, 500);
+                }
+            } else {
+                unflipCards();
+            }
+        }
+        
+        function disableCards() {
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            
+            resetBoard();
+        }
+        
+        function unflipCards() {
+            lockBoard = true;
+            
+            setTimeout(() => {
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
+                
+                resetBoard();
+            }, 1000);
+        }
+        
+        function resetBoard() {
+            [hasFlippedCard, lockBoard] = [false, false];
+            [firstCard, secondCard] = [null, null];
+        }
+        
+        memoryResetBtn.addEventListener('click', initMemoryGame);
+        
+        // Snake Game Logic
+        const snakeCanvas = document.getElementById('snake-canvas');
+        const snakeCtx = snakeCanvas.getContext('2d');
+        const snakeScoreEl = document.getElementById('snake-score');
+        const snakeStartBtn = document.getElementById('snake-start');
+        const snakeResetBtn = document.getElementById('snake-reset');
+        
+        const box = 20;
+        let snake = [{x: 9 * box, y: 10 * box}];
+        let food = {x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box};
+        let d;
+        let game;
+        let score = 0;
+        
+        function drawGame() {
+            // Clear canvas
+            snakeCtx.fillStyle = '#1a2130';
+            snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+            
+            // Draw snake
+            for (let i = 0; i < snake.length; i++) {
+                snakeCtx.fillStyle = i === 0 ? '#00d4ff' : '#4e54c8';
+                snakeCtx.fillRect(snake[i].x, snake[i].y, box, box);
+                snakeCtx.strokeStyle = '#0a0f1a';
+                snakeCtx.strokeRect(snake[i].x, snake[i].y, box, box);
+            }
+            
+            // Draw food
+            snakeCtx.fillStyle = '#ff6b6b';
+            snakeCtx.fillRect(food.x, food.y, box, box);
+            
+            // Current head position
+            let snakeX = snake[0].x;
+            let snakeY = snake[0].y;
+            
+            // Move snake
+            if (d === 'LEFT') snakeX -= box;
+            if (d === 'UP') snakeY -= box;
+            if (d === 'RIGHT') snakeX += box;
+            if (d === 'DOWN') snakeY += box;
+            
+            // Check if snake eats food
+            if (snakeX === food.x && snakeY === food.y) {
+                score++;
+                snakeScoreEl.textContent = score;
+                food = {
+                    x: Math.floor(Math.random() * 20) * box,
+                    y: Math.floor(Math.random() * 20) * box
+                };
+            } else {
+                // Remove tail
+                snake.pop();
+            }
+            
+            // Add new head
+            let newHead = {x: snakeX, y: snakeY};
+            
+            // Game over conditions
+            if (
+                snakeX < 0 || snakeY < 0 ||
+                snakeX >= snakeCanvas.width || snakeY >= snakeCanvas.height ||
+                collision(newHead, snake)
+            ) {
+                clearInterval(game);
+                snakeStartBtn.textContent = 'Game Over - Play Again?';
+                return;
+            }
+            
+            snake.unshift(newHead);
+        }
+        
+        function collision(head, array) {
+            for (let i = 0; i < array.length; i++) {
+                if (head.x === array[i].x && head.y === array[i].y) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        function changeDirection(e) {
+            if (e.keyCode === 37 && d !== 'RIGHT') d = 'LEFT';
+            if (e.keyCode === 38 && d !== 'DOWN') d = 'UP';
+            if (e.keyCode === 39 && d !== 'LEFT') d = 'RIGHT';
+            if (e.keyCode === 40 && d !== 'UP') d = 'DOWN';
+        }
+        
+        function startSnakeGame() {
+            snake = [{x: 9 * box, y: 10 * box}];
+            d = undefined;
+            score = 0;
+            snakeScoreEl.textContent = '0';
+            food = {
+                x: Math.floor(Math.random() * 20) * box,
+                y: Math.floor(Math.random() * 20) * box
+            };
+            snakeStartBtn.textContent = 'Restart Game';
+            
+            if (game) clearInterval(game);
+            game = setInterval(drawGame, 100);
+        }
+        
+        function resetSnakeGame() {
+            clearInterval(game);
+            snakeCtx.fillStyle = '#1a2130';
+            snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+            snakeStartBtn.textContent = 'Start Game';
+            score = 0;
+            snakeScoreEl.textContent = '0';
+        }
+        
+        snakeStartBtn.addEventListener('click', startSnakeGame);
+        snakeResetBtn.addEventListener('click', resetSnakeGame);
+        document.addEventListener('keydown', changeDirection);
+        
+        // Flappy Bird Game Logic
+        const flappyCanvas = document.getElementById('flappy-canvas');
+        const flappyCtx = flappyCanvas.getContext('2d');
+        const flappyScoreEl = document.getElementById('flappy-score');
+        const flappyStartBtn = document.getElementById('flappy-start');
+        const flappyResetBtn = document.getElementById('flappy-reset');
+        
+        const bird = {
+            x: 50,
+            y: 150,
+            width: 30,
+            height: 30,
+            velocity: 0,
+            gravity: 0.3,
+            jump: -8
+        };
+        
+        const pipes = [];
+        let pipeGap = 250;
+        let pipeWidth = 60;
+        let pipeFrequency = 2200;
+        let lastPipe = 0;
+        let scoreFlappy = 0;
+        let flappyGame;
+        let gameRunning = false;
+
+        function drawFlappyGame(timestamp) {
+            if (!gameRunning) return;
+
+            // Clear canvas
+            flappyCtx.fillStyle = '#1a2130';
+            flappyCtx.fillRect(0, 0, flappyCanvas.width, flappyCanvas.height);
+
+            // Draw bird
+            flappyCtx.fillStyle = '#00d4ff';
+            flappyCtx.fillRect(bird.x, bird.y, bird.width, bird.height);
+
+            // Apply gravity
+            bird.velocity += bird.gravity;
+            bird.y += bird.velocity;
+
+            // Generate pipes
+            if (timestamp - lastPipe > pipeFrequency) {
+                const minPipeHeight = 40;
+                const maxPipeHeight = flappyCanvas.height - pipeGap - minPipeHeight;
+                const height = Math.floor(Math.random() * (maxPipeHeight - minPipeHeight + 1)) + minPipeHeight;
+                pipes.push({
+                    x: flappyCanvas.width,
+                    y: 0,
+                    width: pipeWidth,
+                    height: height,
+                    passed: false,
+                    isTop: true
+                });
+                pipes.push({
+                    x: flappyCanvas.width,
+                    y: height + pipeGap,
+                    width: pipeWidth,
+                    height: flappyCanvas.height - height - pipeGap,
+                    passed: false,
+                    isTop: false
+                });
+                lastPipe = timestamp;
+            }
+
+            // Draw and move pipes
+            flappyCtx.fillStyle = '#4e54c8';
+            for (let i = 0; i < pipes.length; i++) {
+                const pipe = pipes[i];
+                pipe.x -= 1.1;
+
+                flappyCtx.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
+
+                // Only count score for bottom pipes (to avoid double counting)
+                if (!pipe.passed && !pipe.isTop && pipe.x + pipe.width < bird.x) {
+                    pipe.passed = true;
+                    scoreFlappy++;
+                    flappyScoreEl.textContent = scoreFlappy;
+                }
+
+                // Remove pipes that are off screen
+                if (pipe.x + pipe.width < 0) {
+                    pipes.splice(i, 1);
+                    i--;
+                }
+            }
+
+            // Check collisions
+            if (
+                bird.y + bird.height > flappyCanvas.height || // Hit the ground
+                bird.y < 0 || // Hit the ceiling
+                checkPipeCollision()
+            ) {
+                gameOver();
+                return;
+            }
+
+            flappyGame = requestAnimationFrame(drawFlappyGame);
+        }
+
+        function checkPipeCollision() {
+            // Only check collision if bird is within the horizontal bounds of a pipe
+            for (let i = 0; i < pipes.length; i++) {
+                const pipe = pipes[i];
+                if (
+                    bird.x + bird.width > pipe.x &&
+                    bird.x < pipe.x + pipe.width
+                ) {
+                    if (
+                        bird.y < pipe.y + pipe.height && // Top pipe
+                        bird.y + bird.height > pipe.y
+                    ) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        
+        function gameOver() {
+            gameRunning = false;
+            cancelAnimationFrame(flappyGame);
+            flappyStartBtn.textContent = 'Game Over - Play Again?';
+        }
+        
+        function startFlappyGame() {
+            bird.y = 150;
+            bird.velocity = 0;
+            pipes.length = 0;
+            scoreFlappy = 0;
+            flappyScoreEl.textContent = '0';
+            lastPipe = 0;
+            gameRunning = true;
+            flappyStartBtn.textContent = 'Restart Game';
+            flappyGame = requestAnimationFrame(drawFlappyGame);
+        }
+        
+        function resetFlappyGame() {
+            gameRunning = false;
+            cancelAnimationFrame(flappyGame);
+            flappyCtx.fillStyle = '#1a2130';
+            flappyCtx.fillRect(0, 0, flappyCanvas.width, flappyCanvas.height);
+            flappyStartBtn.textContent = 'Start Game';
+            scoreFlappy = 0;
+            flappyScoreEl.textContent = '0';
+        }
+        
+        function flap() {
+            if (gameRunning) {
+                bird.velocity = bird.jump;
+            } else {
+                startFlappyGame();
+            }
+        }
+        
+        flappyStartBtn.addEventListener('click', startFlappyGame);
+        flappyResetBtn.addEventListener('click', resetFlappyGame);
+        flappyCanvas.addEventListener('click', flap);
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                flap();
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Initialize first game
+        initMemoryGame();
+    </script>
+</body>
+</html>
